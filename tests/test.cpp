@@ -6,19 +6,21 @@
 using namespace std;
 
 int test_load(void) {
+  size_t i;
   vector<unsigned long> shape;
   vector<double> data;
 
   npy::LoadArrayFromNumpy("data/f8.npy", shape, data);
 
   cout << "shape: ";
-  for (size_t i = 0; i<shape.size(); i++)
+  for (i=0; i<shape.size()-1; i++)
     cout << shape[i] << ", ";
-  cout << endl;
+  cout << shape[i] << endl;
+
   cout << "data: ";
-  for (size_t i = 0; i<data.size(); i++)
+  for (i=0; i<data.size()-1; i++)
     cout << data[i] << ", ";
-  cout << endl;
+  cout << data[i] << endl;
 
   return 0;
 }
